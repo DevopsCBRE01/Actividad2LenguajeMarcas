@@ -139,11 +139,17 @@
                                             </restriction>
                                         </simpleType>
                                     </attribute>
-                                    <attribute name="fecha_publicacion" type="date" use="required"/>
+                                    <attribute name="fecha_publicacion" type="date"/>
                                 </complexType>  
                             </element>                                                      
                         </sequence>
-                        <attribute name="id" type="string" use="required"/>
+                        <attribute name="id">
+                            <simpleType>
+                                <restriction base="string">
+                                    <pattern value="[L,R,P][0-9]{4}"></pattern>
+                                </restriction>
+                            </simpleType>
+                        </attribute>
                     </complexType>
                 </element>
             </sequence>
